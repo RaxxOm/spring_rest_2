@@ -7,6 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 
 public class Suscrito {
@@ -14,19 +17,21 @@ public class Suscrito {
 	@Id
 	@GeneratedValue
 	
-			private int codigo; 
+			private Long codigo; 
 			private String nombre;
 			private String correo; 
 			
-			@OneToMany(mappedBy = "suscrito")
+			//cuando la lista no es importante
+			@JsonIgnore
+			@OneToMany(mappedBy = "suscrito")		//Uno a muchos. Relacion de asociación bidirecional
 			private List<Comentario> comentarios;
 
-			public int getCodigo() {
+			public Long getCodigo() {
 				return codigo;
 			}
 
 			public void setCodigo(int codigo) {
-				this.codigo = codigo;
+				this.codigo = (long) codigo;
 			}
 
 			public String getNombre() {

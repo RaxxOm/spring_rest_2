@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -21,7 +22,7 @@ public class Comentario extends General {
 		
 		//lo dejamos invisible
 		//o ver el obejto post deja de ser importante 
-		@JsonManagedReference
+		//np se agrega notaciones cuando la lista no es importante
 		@ManyToOne
 		private Post post; //Aplicación de asociación 
 		

@@ -28,8 +28,8 @@ public class ComentarioController {
 			@Autowired				//INICIALIZA DENTRO DEL CONTEXTO SPRING
 			private ComentarioRepository postRepository;
 			
-			//realizamos la consulta y cargamos el obejto comentario
-								
+			
+			//realizamos la consulta y cargamos el obejto comentario			
 			//Responderá al verbo Get
 			//URL /post
 			
